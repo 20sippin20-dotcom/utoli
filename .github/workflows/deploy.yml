@@ -1,0 +1,62 @@
+name: Публикация на GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Позволяет запустить сборку вручную из вкладки Actions.
+  workflow_dispatch:
+
+# Разрешения, которые нужны Pages для публикации.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Одновременно идёт только одна публикация; новый пуш отменяет предыдущую.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Установка зависимостей
+        run: npm ci
+
+      - name: Проверки
+        run: npm run check
+
+      - name: Сборка статики
+        env:
+          # Боевой домен. Задаётся в Settings -> Secrets and variables -> Actions -> Variables.
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_YM_ID: ${{ vars.NEXT_PUBLIC_YM_ID }}
+          NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          NEXT_PUBLIC_YANDEX_VERIFICATION: ${{ vars.NEXT_PUBLIC_YANDEX_VERIFICATION }}
+        run: npm run build
+
+      - name: Поиск плейсхолдеров в собранной статике
+        run: npm run check:output
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,74 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.item[open] {
+  border-color: var(--blue-100);
+  box-shadow: var(--shadow-card);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 60px;
+  padding: 1rem 1.35rem;
+  font-size: var(--step-1);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary:hover {
+  color: var(--blue-600);
+}
+
+.marker {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 22px;
+}
+
+.marker::before,
+.marker::after {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--blue-600);
+  transform: translateY(-50%);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.marker::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.item[open] .marker::after {
+  transform: translateY(-50%) rotate(0deg);
+  opacity: 0;
+}
+
+.answer {
+  padding: 0 1.35rem 1.35rem;
+  color: var(--navy-800);
+  max-width: 68ch;
+}

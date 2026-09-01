@@ -1,0 +1,221 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Первый экран целиком помещается в видимую область под шапкой:
+     фотография забирает ровно то, что осталось от текста и кнопок. */
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(60rem 32rem at 88% -10%, rgba(16, 168, 222, 0.16), transparent 62%),
+    radial-gradient(38rem 30rem at 4% 105%, rgba(16, 168, 222, 0.1), transparent 60%),
+    var(--ice);
+}
+
+/* Деликатные пузырьки: не перекрывают ни текст, ни бутыли */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.9), rgba(16, 168, 222, 0.12) 62%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 260px;
+  height: 260px;
+  top: -70px;
+  right: 22%;
+}
+
+.hero::after {
+  width: 150px;
+  height: 150px;
+  bottom: 8%;
+  left: 46%;
+  opacity: 0.7;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
+  align-items: center;
+  gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  /* Отступы зависят и от высоты экрана: на невысоких ноутбуках они сжимаются. */
+  padding-block: clamp(1rem, 2svh, 3rem);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 0.5rem + 0.8vw, 1.1rem);
+  max-width: 34rem;
+}
+
+.title {
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  font-size: var(--step-1);
+  color: var(--navy-800);
+  max-width: 30rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.phoneHint {
+  color: var(--slate);
+  font-size: var(--step--1);
+}
+
+.phoneValue {
+  color: var(--navy);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+  padding-top: clamp(0.75rem, 0.5rem + 0.8vw, 1.1rem);
+  border-top: 1px solid var(--slate-300);
+  width: 100%;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.35rem 0.95rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.75);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.chip:hover {
+  background: var(--white);
+  border-color: var(--accent);
+}
+
+.chipDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.chipAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+  padding-inline: 0.35rem;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--blue-600);
+  text-decoration: none;
+}
+
+.chipAll:hover {
+  text-decoration: underline;
+}
+
+.media {
+  position: relative;
+  justify-self: end;
+  /* Высота задаётся явно — иначе фотография не смогла бы ужаться под экран.
+     Пропорция сохраняет исходное соотношение кадра 540x648. */
+  height: min(624px, calc(100svh - var(--header-h) - 2 * clamp(1rem, 2svh, 3rem)));
+  aspect-ratio: 540 / 648;
+  width: auto;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(11, 45, 75, 0.18);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - var(--header-h));
+    gap: clamp(1rem, 0.6rem + 1.5vw, 1.75rem);
+  }
+
+  .content {
+    flex: 0 0 auto;
+    max-width: none;
+    order: 1;
+  }
+
+  /* Фотография забирает ровно остаток высоты экрана */
+  .media {
+    order: 2;
+    flex: 1 1 0;
+    min-height: clamp(140px, 20svh, 260px);
+    height: auto;
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    justify-self: stretch;
+  }
+
+  .hero::before {
+    right: -60px;
+  }
+}
+
+/* На низких экранах первый экран не сплющиваем — читаемость важнее */
+@media (max-height: 620px) {
+  .hero,
+  .inner {
+    min-height: 0;
+  }
+  .media {
+    height: auto;
+    aspect-ratio: 540 / 648;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Кнопки на всю ширину: в один ряд подписи не помещаются */
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  /* Переключатели линеек дублируют каталог, который идёт сразу под первым
+     экраном. На телефоне эта высота нужнее фотографии. */
+  .chips {
+    display: none;
+  }
+}

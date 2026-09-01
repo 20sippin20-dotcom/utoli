@@ -1,0 +1,41 @@
+.wrapper {
+  padding-block: 1rem 0.25rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+  color: var(--slate);
+}
+
+.item + .item::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--slate-300);
+  vertical-align: middle;
+}
+
+.link {
+  color: var(--slate);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
+.current {
+  color: var(--navy);
+  font-weight: 600;
+}

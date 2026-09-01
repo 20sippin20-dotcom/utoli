@@ -1,0 +1,164 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: var(--white);
+  box-shadow: var(--shadow-header);
+}
+
+/* ————— Сервисная полоса ————— */
+
+.utility {
+  background: var(--navy);
+  color: var(--blue-100);
+  font-size: var(--step--1);
+}
+
+.utilityInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 40px;
+}
+
+.utilityText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.utilityIcon {
+  flex: none;
+  opacity: 0.85;
+}
+
+.utilityRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.utilityHours {
+  color: var(--blue-100);
+}
+
+.utilityPhone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 40px;
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.utilityPhone:hover {
+  color: var(--blue-100);
+}
+
+/* ————— Основная шапка ————— */
+
+.bar {
+  background: var(--white);
+}
+
+.barInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  min-height: 76px;
+}
+
+.nav {
+  flex: 1;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.4vw, 1.75rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  min-height: 44px;
+  padding-inline: 0.15rem;
+  font-weight: 600;
+  font-size: var(--step-0);
+  text-decoration: none;
+  color: var(--navy);
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--blue-600);
+  border-bottom-color: var(--blue);
+}
+
+.navLink[aria-current='page'] {
+  color: var(--blue-600);
+  border-bottom-color: var(--blue);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--navy);
+}
+
+.phone:hover {
+  color: var(--blue-600);
+}
+
+.cta {
+  white-space: nowrap;
+}
+
+@media (max-width: 1150px) {
+  .phone span {
+    display: none;
+  }
+  .phone {
+    min-width: 44px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .nav,
+  .actions {
+    display: none;
+  }
+  .barInner {
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .utilityHours {
+    display: none;
+  }
+  .utilityText {
+    font-size: 0.8125rem;
+  }
+}

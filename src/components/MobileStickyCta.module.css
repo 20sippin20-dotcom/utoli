@@ -1,0 +1,50 @@
+.bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .bar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 55;
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.6rem var(--gutter) calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in srgb, var(--white) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+    transform: translateY(110%);
+    transition: transform var(--transition);
+  }
+
+  .visible {
+    transform: translateY(0);
+  }
+
+  .primary {
+    flex: 1 1 auto;
+    min-height: 52px;
+    white-space: nowrap;
+    padding-inline: 1rem;
+  }
+
+  .call {
+    flex: 0 0 auto;
+    min-width: 52px;
+    white-space: nowrap;
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .callLabel {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    transition: none;
+  }
+}
