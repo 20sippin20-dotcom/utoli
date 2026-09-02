@@ -31,7 +31,7 @@ export default function AboutPage() {
               «{site.brandNameRu}» ({site.brandNameLatin}) — питьевая вода в бутылях 19 литров и её
               доставка по {site.cityPrepositional}, пригородам и в Сосногорск. В каталоге три
               линейки: классическая, «{site.brandNameRu} Магний» — вода с магнием — и «
-              {site.brandNameRu} Premium». Формат один и тот же, поэтому бутыль подходит и для
+              {site.brandNameRu} Premium» с добавлением ионов серебра. Формат один и тот же, поэтому бутыль подходит и для
               кулера, и для механической помпы.
             </p>
 

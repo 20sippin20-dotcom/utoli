@@ -35,7 +35,7 @@ export function LocalSeoContent() {
               </span>
             ))}
             Классическая «{site.brandNameRu}» — базовая питьевая вода, «{site.brandNameRu} Магний» —
-            вода с магнием, «{site.brandNameRu} Premium» — премиальная линейка бренда.
+            вода с магнием, «{site.brandNameRu} Premium» — премиальная линейка с ионами серебра.
           </p>
 
           <h3>Почему 19 литров</h3>
