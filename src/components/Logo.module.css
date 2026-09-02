@@ -1,6 +1,7 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  flex: none;
   text-decoration: none;
   transition: opacity var(--transition);
 }
@@ -9,7 +10,19 @@
   opacity: 0.82;
 }
 
+/*
+ * Размер задаётся здесь, а не атрибутами: иначе картинка берёт свой
+ * природный размер 930x263 и растягивается на всю ширину экрана.
+ * Высота фиксирована, ширина считается по пропорции.
+ */
 .image {
-  height: auto;
+  display: block;
+  height: 34px;
   width: auto;
+}
+
+@media (max-width: 1023px) {
+  .image {
+    height: 26px;
+  }
 }

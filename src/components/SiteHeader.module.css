@@ -26,6 +26,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  white-space: nowrap;
 }
 
 .utilityIcon {
@@ -150,11 +151,17 @@
     display: none;
   }
   .barInner {
-    min-height: 64px;
+    min-height: 54px;
   }
 }
 
 @media (max-width: 600px) {
+  .utilityInner {
+    min-height: 34px;
+  }
+  .utilityLong {
+    display: none;
+  }
   .utilityHours {
     display: none;
   }

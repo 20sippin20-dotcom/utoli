@@ -20,7 +20,9 @@ export function SiteHeader() {
         <div className={`container ${styles.utilityInner}`}>
           <p className={styles.utilityText}>
             <DropIcon size={16} className={styles.utilityIcon} />
-            Доставка питьевой воды в {site.cityPrepositional}
+            {/* На телефоне фраза короче, иначе полоса переносится на две строки */}
+            Доставка <span className={styles.utilityLong}>питьевой </span>воды в{' '}
+            {site.cityPrepositional}
           </p>
           <div className={styles.utilityRight}>
             {site.workingHours ? (
