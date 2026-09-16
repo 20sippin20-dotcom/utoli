@@ -36,9 +36,10 @@ export default function DeliveryAndPaymentPage() {
           <div className="prose">
             <h2 id="terms-title">Как проходит заказ</h2>
             <p>
-              Заказ оформляется в приложении {site.appName} или у диспетчера по номеру{' '}
+              Заказ можно начать в приложении {site.appName}, через{' '}
+              <Link href={routes.catalog.path}>каталог на сайте</Link> или у оператора по номеру{' '}
               <a href={site.dispatcherPhoneHref}>{site.dispatcherPhoneDisplay}</a>. После оформления
-              диспетчер подтверждает заказ и согласовывает доставку по{' '}
+              оператор подтверждает заказ и согласовывает доставку по{' '}
               {site.cityPrepositional}.
             </p>
 
@@ -54,7 +55,7 @@ export default function DeliveryAndPaymentPage() {
               </>
             ) : (
               <p>
-                Удобный способ оплаты уточните у диспетчера при оформлении заказа — он подскажет,
+                Удобный способ оплаты уточните у оператора при оформлении заказа — он подскажет,
                 какие варианты доступны сейчас.
               </p>
             )}
@@ -65,7 +66,7 @@ export default function DeliveryAndPaymentPage() {
             ) : (
               <p>
                 Бутыль 19 л многооборотная: пустую тару забирают при следующей доставке. Правила
-                обмена и вопрос залога уточните у диспетчера.
+                обмена и вопрос залога уточните у оператора.
               </p>
             )}
 
@@ -77,7 +78,7 @@ export default function DeliveryAndPaymentPage() {
             ) : (
               <p>
                 Актуальные условия доставки и минимальный заказ видны при оформлении в приложении{' '}
-                {site.appName}. Их также можно уточнить у диспетчера.
+                {site.appName}. Их также можно уточнить у оператора.
               </p>
             )}
 
@@ -89,7 +90,7 @@ export default function DeliveryAndPaymentPage() {
         </div>
       </section>
 
-      <ContactBlock heading="Спросить у диспетчера" />
+      <ContactBlock heading="Спросить у оператора" />
     </>
   );
 }

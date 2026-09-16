@@ -10,8 +10,7 @@ import { TrackedLink } from '@/components/TrackedLink';
 import styles from './Hero.module.css';
 
 /**
- * Первый экран. Ничего не обещаем про сроки, стоимость и график: в тексте
- * только подтверждённые факты — город, объём, три линейки и два способа заказа.
+ * Первый экран с основными сведениями о воде и заказе.
  */
 export function Hero() {
   return (
@@ -28,7 +27,7 @@ export function Hero() {
 
           <p className={styles.lead}>
             Питьевая вода 19 л для дома и офиса. Выберите свою «{site.brandNameRu}» и оформите заказ
-            в приложении или у диспетчера.
+            в приложении или у оператора.
           </p>
 
           <div className={styles.actions}>
@@ -49,12 +48,12 @@ export function Hero() {
               className="btn btn--secondary"
             >
               <PhoneIcon size={20} className="btn__icon" />
-              <span>Позвонить<span className={styles.callLabel}>&nbsp;диспетчеру</span></span>
+              <span>Позвонить<span className={styles.callLabel}>&nbsp;оператору</span></span>
             </TrackedLink>
           </div>
 
           <p className={styles.phoneHint}>
-            Диспетчер: <span className={styles.phoneValue}>{site.dispatcherPhoneDisplay}</span>
+            Оператор: <span className={styles.phoneValue}>{site.dispatcherPhoneDisplay}</span>
           </p>
 
           <div className={styles.chips}>

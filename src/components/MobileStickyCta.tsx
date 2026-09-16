@@ -34,7 +34,7 @@ export function MobileStickyCta() {
         event="click_phone_header"
         eventParams={{ place: 'sticky_bar' }}
         className={`btn btn--secondary ${styles.call}`}
-        aria-label={`Позвонить диспетчеру ${site.dispatcherPhoneDisplay}`}
+        aria-label={`Позвонить оператору ${site.dispatcherPhoneDisplay}`}
       >
         <PhoneIcon size={20} className="btn__icon" />
         <span className={styles.callLabel}>Позвонить</span>

@@ -43,7 +43,7 @@ export function OrderSteps() {
         </ol>
 
         <p className={styles.alt}>
-          Не пользуетесь приложением? Позвоните диспетчеру по номеру{' '}
+          Не пользуетесь приложением? Позвоните оператору по номеру{' '}
           <a href={site.dispatcherPhoneHref} className={styles.altPhone}>
             {site.dispatcherPhoneDisplay}
           </a>{' '}

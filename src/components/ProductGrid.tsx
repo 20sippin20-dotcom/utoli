@@ -23,7 +23,7 @@ export function CatalogSection({ title = 'Выберите свою воду' }:
           <h2 id="catalog-title">{title}</h2>
           <p className="section__lead">
             Три линейки в одинаковой бутыли 19 л: классическая «Утоли», вода с магнием и Premium с
-            ионами серебра.
+            микрочастицами серебра.
           </p>
         </div>
         <ProductGrid />

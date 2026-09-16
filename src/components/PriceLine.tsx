@@ -27,7 +27,8 @@ export function PriceLine({
     return (
       <p className={classNames}>
         <span className={styles.note}>
-          Актуальную цену и условия уточняйте в приложении {site.appName} или у диспетчера
+          Актуальные цены и наличие — в приложении {site.appName}. Уточнить у оператора можно с
+          9:00 до 18:00 по телефону {site.dispatcherPhoneDisplay}.
         </span>
       </p>
     );

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     default: `Доставка воды в ${site.cityPrepositional} — «${site.brandNameRu}» | Вода 19 л`,
     template: `%s | «${site.brandNameRu}»`,
   },
-  description: `Питьевая вода «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Заказ в приложении ${site.appName} или у диспетчера.`,
+  description: `Питьевая вода «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Заказ в приложении ${site.appName} или у оператора.`,
   applicationName: site.brandNameLatin,
   formatDetection: { telephone: true },
   verification: {

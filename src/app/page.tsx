@@ -18,7 +18,7 @@ import { CatalogSection } from '@/components/ProductGrid';
 
 export const metadata: Metadata = pageMetadata({
   title: `Доставка воды в ${site.cityPrepositional} — «${site.brandNameRu}» | Вода 19 л`,
-  description: `Закажите питьевую воду «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Классическая, Магний и Premium. Заказ в приложении ${site.appName} или у диспетчера.`,
+  description: `Закажите питьевую воду «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Классическая, Магний и Premium. Заказ в приложении ${site.appName} или у оператора.`,
   path: routes.home.path,
 });
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = pageMetadata({
  * Кнопка «Открыть PDF» показывается только если файл действительно лежит
  * в public/documents на момент сборки. Появится новый скан — кнопка
  * добавится сама; пропадёт файл — вместо битой ссылки будет предложение
- * запросить копию у диспетчера.
+ * запросить копию у оператора.
  */
 function hasFile(file: string | null): boolean {
   return file !== null && existsSync(path.join(process.cwd(), 'public', 'documents', file));
@@ -69,7 +69,7 @@ export default function DocumentsPage() {
                   </a>
                 ) : (
                   <p className={styles.meta}>
-                    Копию можно запросить у диспетчера по телефону{' '}
+                    Копию можно запросить у оператора по телефону{' '}
                     <a href={site.dispatcherPhoneHref}>{site.dispatcherPhoneDisplay}</a>.
                   </p>
                 )}

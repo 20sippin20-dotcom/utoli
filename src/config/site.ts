@@ -71,6 +71,7 @@ export interface SiteConfig {
   postalCode: Nullable<string>;
   address: Nullable<string>;
   dispatcherPhoneDisplay: string;
+  dispatcherPhoneShortDisplay: string;
   dispatcherPhoneHref: string;
   vkUrl: string;
   twoGisUrl: Nullable<string>;
@@ -116,6 +117,7 @@ export const site: SiteConfig = {
   address: 'ул. Печорская, д. 31',
 
   dispatcherPhoneDisplay: '+7 (8216) 77-75-75',
+  dispatcherPhoneShortDisplay: '77-75-75',
   dispatcherPhoneHref: 'tel:+78216777575',
 
   vkUrl: 'https://vk.ru/utoli11',
@@ -127,7 +129,11 @@ export const site: SiteConfig = {
   appName: 'Utoli',
   appBundleId: 'ru.aquadelivery.utoli.client',
 
-  workingHours: null, // TODO_OWNER
+  workingHours: {
+    opens: '09:00',
+    closes: '18:00',
+    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  },
   deliveryAreas: ['Ухта', 'Шудаяг', 'Водный', 'Ярега', 'Сосногорск'],
   deliveryAreasSummary: 'Ухта и пригороды — Шудаяг, Водный, Ярега, — а также Сосногорск',
   paymentMethods: [], // TODO_OWNER
@@ -172,7 +178,7 @@ export const products: Product[] = [
       h1: 'Вода «Утоли» 19 л с доставкой в Ухте',
       title: 'Вода «Утоли» 19 л — доставка в Ухте',
       description:
-        'Питьевая вода «Утоли» в бутыли 19 л с доставкой по Ухте. Заказ в приложении Utoli или у диспетчера.',
+        'Питьевая вода «Утоли» в бутыли 19 л с доставкой по Ухте. Заказ в приложении Utoli или у оператора.',
     },
   },
   {
@@ -188,7 +194,7 @@ export const products: Product[] = [
     currency: 'RUB',
     availability: null,
     sku: null,
-    shortDescription: 'Питьевая вода «Утоли» с магнием, бутыль 19 л.',
+    shortDescription: 'Вода премиум-класса с содержанием магния (Mg), бутыль 19 л.',
     verifiedFacts: [
       { label: 'Объём', value: '19 л' },
       { label: 'Особенность', value: 'Вода с магнием' },
@@ -217,11 +223,11 @@ export const products: Product[] = [
     currency: 'RUB',
     availability: null,
     sku: null,
-    shortDescription: 'Премиальная линейка «Утоли» 19 л с добавлением ионов серебра.',
+    shortDescription: 'Вода высшей категории очистки с микрочастицами серебра (Ag), бутыль 19 л.',
     verifiedFacts: [
       { label: 'Объём', value: '19 л' },
-      { label: 'Особенность', value: 'С добавлением ионов серебра' },
-      { label: 'Категория', value: 'Природная питьевая вода первой категории' },
+      { label: 'Особенность', value: 'С микрочастицами серебра (Ag)' },
+      { label: 'Категория по документам', value: 'Природная питьевая вода первой категории' },
       { label: 'Срок годности', value: '24 месяца' },
     ],
     accentColor: 'var(--accent-premium)',
@@ -230,7 +236,7 @@ export const products: Product[] = [
       h1: 'Вода «Утоли Premium» 19 л с доставкой в Ухте',
       title: 'Вода «Утоли Premium» 19 л — доставка в Ухте',
       description:
-        'Премиальная линейка «Утоли» 19 л с ионами серебра и доставкой по Ухте. Заказ в приложении Utoli или у диспетчера.',
+        'Вода «Утоли Premium» 19 л с микрочастицами серебра (Ag) и доставкой по Ухте. Заказ в приложении Utoli или у оператора.',
     },
   },
 ];

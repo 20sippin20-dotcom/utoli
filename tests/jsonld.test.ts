@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { products } from '@/config/site';
+import { products, site } from '@/config/site';
 import { homeFaq } from '@/content/faq';
 import {
   breadcrumbJsonLd,
@@ -118,8 +118,12 @@ describe('LocalBusiness', () => {
     expect(address.postalCode).toBeTruthy();
   });
 
-  it('незаполненный график не выводится', () => {
-    expect(organizationJsonLd().openingHoursSpecification).toBeUndefined();
+  it('указан ежедневный график работы оператора', () => {
+    expect(organizationJsonLd().openingHoursSpecification).toMatchObject({
+      opens: '09:00',
+      closes: '18:00',
+      dayOfWeek: site.workingHours?.days,
+    });
   });
 
   it('реквизиты изготовителя заполнены', () => {

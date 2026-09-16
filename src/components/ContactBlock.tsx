@@ -20,7 +20,7 @@ export function ContactBlock({ heading = 'Контакты' }: { heading?: strin
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <h3 className={styles.title}>Диспетчер</h3>
+            <h3 className={styles.title}>Оператор</h3>
             <TrackedLink
               href={site.dispatcherPhoneHref}
               event="click_phone_product"
@@ -32,7 +32,7 @@ export function ContactBlock({ heading = 'Контакты' }: { heading?: strin
             </TrackedLink>
             <p className={styles.note}>
               Приём заказов по телефону и консультация по линейкам воды.
-              {site.workingHours ? null : ' Точный график работы уточняйте у диспетчера.'}
+              {site.workingHours ? null : ' Точный график работы уточняйте у оператора.'}
             </p>
             {site.email ? (
               <p className={styles.note}>
@@ -60,7 +60,7 @@ export function ContactBlock({ heading = 'Контакты' }: { heading?: strin
             </address>
             <p className={styles.note}>Доставляем: {site.deliveryAreasSummary}.</p>
             <p className={styles.note}>
-              Если вашего адреса нет в списке, спросите диспетчера — маршрут часто можно
+              Если вашего адреса нет в списке, спросите оператора — маршрут часто можно
               согласовать.
             </p>
           </div>

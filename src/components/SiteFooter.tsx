@@ -23,7 +23,7 @@ export function SiteFooter() {
           <Logo />
           <p className={styles.tagline}>
             Питьевая вода 19 л с доставкой по {site.cityPrepositional}. Заказ в приложении{' '}
-            {site.appName} или у диспетчера.
+            {site.appName} или у оператора.
           </p>
           <TrackedLink href={site.vkUrl} event="click_vk" external className={styles.social}>
             <VkIcon size={20} />

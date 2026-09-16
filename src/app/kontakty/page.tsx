@@ -11,7 +11,7 @@ import { PageHeader } from '@/components/PageHeader';
 
 export const metadata: Metadata = pageMetadata({
   title: `Контакты — доставка воды «${site.brandNameRu}» в ${site.cityPrepositional}`,
-  description: `Телефон диспетчера ${site.dispatcherPhoneDisplay}, официальная группа ВКонтакте и зона доставки воды «${site.brandNameRu}» в ${site.cityPrepositional}.`,
+  description: `Телефон оператора ${site.dispatcherPhoneDisplay}, официальная группа ВКонтакте и зона доставки воды «${site.brandNameRu}» в ${site.cityPrepositional}.`,
   path: routes.contacts.path,
 });
 
@@ -22,7 +22,7 @@ export default function ContactsPage() {
         crumbs={[{ name: routes.contacts.label, path: routes.contacts.path }]}
         eyebrow="Контакты"
         title={`Контакты «${site.brandNameRu}» в ${site.cityPrepositional}`}
-        lead="Заказ и вопросы по доставке — у диспетчера. Ниже собраны все официальные способы связи."
+        lead="Заказ и вопросы по доставке — у оператора. Ниже собраны все официальные способы связи."
       />
 
       <ContactBlock heading="Как с нами связаться" />
@@ -32,7 +32,7 @@ export default function ContactsPage() {
           <div className="prose">
             <h2 id="contacts-note-title">Что уточнить по телефону</h2>
             <p>
-              Диспетчер принимает заказы, подсказывает по линейкам воды и отвечает на вопросы о
+              Оператор принимает заказы, подсказывает по линейкам воды и отвечает на вопросы о
               доставке: сколько бутылей удобно взять, как обменивается тара, какие условия действуют
               для организаций. Если вы заказываете впервые — это самый быстрый способ разобраться.
             </p>
@@ -40,7 +40,7 @@ export default function ContactsPage() {
               Телефон: <a href={site.dispatcherPhoneHref}>{site.dispatcherPhoneDisplay}</a>.
               {site.workingHours
                 ? ` Приём заказов: ${site.workingHours.opens}–${site.workingHours.closes}.`
-                : ' График приёма заказов уточняйте у диспетчера.'}
+                : ' График приёма заказов уточняйте у оператора.'}
             </p>
             <p>
               Официальная группа ВКонтакте:{' '}
@@ -51,7 +51,7 @@ export default function ContactsPage() {
             </p>
             <p>
               Доставляем по {site.deliveryAreasSummary}. Если вашего адреса нет в списке, спросите
-              диспетчера — маршрут часто можно согласовать.
+              оператора — маршрут часто можно согласовать.
             </p>
           </div>
         </div>

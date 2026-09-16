@@ -80,7 +80,7 @@ describe('title и description', () => {
   const pages: { title: string; description: string }[] = [
     {
       title: `Доставка воды в ${site.cityPrepositional} — «${site.brandNameRu}» | Вода 19 л`,
-      description: `Закажите питьевую воду «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Классическая, Магний и Premium. Заказ в приложении ${site.appName} или у диспетчера.`,
+      description: `Закажите питьевую воду «${site.brandNameRu}» 19 л с доставкой по ${site.cityPrepositional}. Классическая, Магний и Premium. Заказ в приложении ${site.appName} или у оператора.`,
     },
     {
       title: `Вода «${site.brandNameRu}» 19 л — каталог и доставка в ${site.cityPrepositional}`,
@@ -88,7 +88,7 @@ describe('title и description', () => {
     },
     {
       title: `Доставка питьевой воды в ${site.cityPrepositional} домой и в офис`,
-      description: `Как заказать доставку воды 19 л по ${site.cityPrepositional}: способы заказа, зона доставки, форматы для дома и офиса. Заказ в приложении ${site.appName} или у диспетчера.`,
+      description: `Как заказать доставку воды 19 л по ${site.cityPrepositional}: способы заказа, зона доставки, форматы для дома и офиса. Заказ в приложении ${site.appName} или у оператора.`,
     },
     {
       title: `Скачать ${site.appName} — приложение для заказа воды в ${site.cityPrepositional}`,
